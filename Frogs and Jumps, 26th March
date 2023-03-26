@@ -1,0 +1,38 @@
+#User function Template for python3
+
+class Solution:
+    def unvisitedLeaves(self, N, leaves, frogs):
+        # code here
+        l=[0]*leaves
+        if 1 in frogs:
+            return 0
+        c=0
+        frogs.sort()
+        for i in frogs:
+            if(i>leaves or l[i-1]==1):
+                continue
+            for j in range(i-1,leaves,i):
+                l[j]=1
+                # print("bruh")
+        # print(l)
+        for y in l:
+            if(y==0):
+                c=c+1
+        return c
+
+
+#{ 
+ # Driver Code Starts
+#Initial Template for Python 3
+
+if __name__ == '__main__':
+    
+    T = int(input())
+    while T > 0: 
+        N, leaves = [int(i) for i in input().split()]
+        frogs = [int(i) for i in input().split()]
+        ob = Solution()
+        print(ob.unvisitedLeaves(N, leaves, frogs))
+        
+        T -= 1
+# } Driver Code Ends
