@@ -1,6 +1,8 @@
+from typing import List
+
+
 class Solution:
     def smallerSum(self, n : int, arr : List[int]) -> List[int]:
-       sum+=arr[i]     
         d={}
         x=arr.copy()
         x.sort()
